@@ -68,7 +68,7 @@ function writeHostWebCSOM() {
     appContext.load(li);    
     appContext.executeQueryAsync(function () {
         $("#workbench").html("Host Web list item created successfully: " + li.get_item('Title') + "<br>See console for output");
-        queryList();
+        queryList(list);
     }, errorHandler);
 }
 
@@ -85,21 +85,21 @@ function writeAppWebCSOM() {
     appContext.load(li);
     appContext.executeQueryAsync(function () {
         $("#workbench").html("App Web list item created successfully: " + li.get_item('Title') + "<br>See console for output");
-        queryList();
+        queryList(list);
     }, errorHandler);
 }
 
-function queryList() {
+function queryList(createdList) {
 
     var camlQuery = new SP.CamlQuery();
     camlQuery.set_viewXml('<View><Query><Where><Geq><FieldRef Name=\'ID\'/>' +
         '<Value Type=\'Number\'>1</Value></Geq></Where></Query></View>');
-    var lis = list.getItems(camlQuery);
+    var filtered = createdList.getItems(camlQuery);
 
-    appContext.load(lis);
+    appContext.load(filtered);
     appContext.executeQueryAsync(function() {
         var result = '';
-        var liEnumerator = lis.getEnumerator();
+        var liEnumerator = filtered.getEnumerator();
         while (liEnumerator.moveNext()) {
             var oListItem = liEnumerator.get_current();
             result += '\nID: ' + oListItem.get_id() +

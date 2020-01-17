@@ -8,13 +8,10 @@
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="usingJSOM.aspx.cs" Inherits="JSOMBasics.Layouts.JSOMBasics.usingJSOM" DynamicMasterPageFile="~masterurl/default.master" %>
 
 <asp:Content ID="PageHead" ContentPlaceHolderID="PlaceHolderAdditionalPageHead" runat="server">
-<%--      <SharePoint:ScriptLink ID="jquery" Name="jquery-2.1.4.min.js" runat="server" >
-    </SharePoint:ScriptLink>--%>
     <script type="text/javascript" src="/_layouts/15/sp.runtime.js"></script>
     <script type="text/javascript" src="/_layouts/15/sp.js"></script>
-    <script type="text/javascript" src="/_layouts/15/SOMBasics/lib/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="/_layouts/15/JSOMBasics/lib/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="/_layouts/15/JSOMBasics/usingJSOM.js"></script>
-
 </asp:Content>
 
 <asp:Content ID="Main" ContentPlaceHolderID="PlaceHolderMain" runat="server">

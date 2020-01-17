@@ -15,10 +15,27 @@
         <h1>Using Microsoft Graph</h1>
         <a href="#" onclick="signOut()">Sign Out</a>
         <a href="#" onclick="doRead()">Read Graph</a>
-        <a href="#" onclick="createEvent()">Create Event</a>
+        <a href="#" onclick="createEventSample()">Create Event</a>
+        <div id="newsDetail">
+            <div>
+                <label>Firstname</label><input id="firstname" type="text">
+            </div>
+            <div>
+                <label>Lastname</label><input id="lastname" type="text">
+            </div>
+            <div>
+                <label>Phone</label><input id="phone" type="text">
+            </div>
+            <div>
+                <label>Mail</label><input id="mail" type="text">
+            </div>
+        </div>
+
+        <a href="#" onclick="createContact()">Create Contact</a>
+        
         <p id="pResult" style="display: none">
             <h2>OneDrive documents</h2>
-            <ul id="OneDrive"></ul>
+            <table id="OneDrive" style="border: 1px solid grey;"></table>
             <h2>Events</h2>
             <ul id="Events"></ul>
             <h2>Contacts</h2>

@@ -7,9 +7,7 @@ var item;
 
 function getItems() {
   $.ajax({
-    url:
-      _spPageContextInfo.webAbsoluteUrl +
-      "/_api/lists/getByTitle('News')/Items?$select=Id,Title,Body,Created,Modified",
+    url: "http://sp2019/_api/lists/getByTitle('News')/Items?$select=Id,Title,Body,Created,Modified",
     type: "GET",
     headers: {
       Accept: "application/json;odata=verbose"
@@ -53,39 +51,39 @@ function renderDetails(id) {
   }
 }
 
-function saveNews() {
+//function saveNews() {
 
-    Object.assign(item, {
-    Id: $("#id").val(),
-    Title: $("#title").val(),
-    Body: $("#body").html()
-  });
+//    Object.assign(item, {
+//    Id: $("#id").val(),
+//    Title: $("#title").val(),
+//    Body: $("#body").html()
+//  });
 
-  console.log("saving", item);
+//  console.log("saving", item);
 
-  var listItemUri =
-    _spPageContextInfo.webAbsoluteUrl +
-    "/_api/web/lists/getbytitle('News')/items(" +
-    item.Id +
-    ")";
+//  var listItemUri =
+//    _spPageContextInfo.webAbsoluteUrl +
+//    "/_api/web/lists/getbytitle('News')/items(" +
+//    item.Id +
+//    ")";
 
-  $.ajax({
-    url: listItemUri,
-    type: "POST",
-    data: JSON.stringify(item),
-    contentType: "application/json;odata=verbose",
-    headers: {
-      Accept: "application/json;odata=verbose",
-      "X-RequestDigest": $("#__REQUESTDIGEST").val(),
-      "X-HTTP-Method": "MERGE",
-      "If-Match": "*"
-    },
-    success: function() {
-      console.log("item has been updated");
-      getItems();
-    },
-    error: function(err) {
-      console.log(err);
-    }
-  });
-}
+//  $.ajax({
+//    url: listItemUri,
+//    type: "POST",
+//    data: JSON.stringify(item),
+//    contentType: "application/json;odata=verbose",
+//    headers: {
+//      Accept: "application/json;odata=verbose",
+//      "X-RequestDigest": $("#__REQUESTDIGEST").val(),
+//      "X-HTTP-Method": "MERGE",
+//      "If-Match": "*"
+//    },
+//    success: function() {
+//      console.log("item has been updated");
+//      getItems();
+//    },
+//    error: function(err) {
+//      console.log(err);
+//    }
+//  });
+//}

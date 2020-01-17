@@ -10,7 +10,7 @@ function usingClientContect() {
     var cctx;
     cctx = new SP.ClientContext(); //Connect to the default context
     cctx = SP.ClientContext.get_current(); //Alternative to above
-    cctx = new SP.ClientContext("http://sp2016"); //Connect to a specific Url
+    cctx = new SP.ClientContext("http://sp2019"); //Connect to a specific Url
     cctx = new SP.ClientContext("/jsomweb"); //Connect to a subweb
 }
 function Batching() {

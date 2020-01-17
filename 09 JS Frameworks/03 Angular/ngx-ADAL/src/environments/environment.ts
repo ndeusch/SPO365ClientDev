@@ -1,12 +1,12 @@
 export const environment = {
 	production: false,
 	config: {
-		tenant: 'd92b247e-90e0-4469-a129-6a32866c0d0a',
-		clientId: '4e60c128-a813-4031-bd99-cf4327cce885', //=> Application ID in Azure
+		tenant: 'b99d5a3a-b043-473f-812b-bc2e9dc954e4',
+		clientId: '2e1b23af-1e07-470c-ad97-966c4c5611ef', //=> Application ID in Azure
 		cacheLocation: 'localStorage',
 		endpoints: {
 			graphApiUri: 'https://graph.microsoft.com',
-			sharePointUri: 'https://integrationsonline.sharepoint.com' // Replace with your Tenant
+			sharePointUri: 'https://vekadev.sharepoint.com' // Replace with your Tenant
 		},
 		returnUrl: 'http://localhost:4200'
 	}

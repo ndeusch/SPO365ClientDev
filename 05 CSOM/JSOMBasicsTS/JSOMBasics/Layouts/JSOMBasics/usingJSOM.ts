@@ -170,7 +170,7 @@ function createWebsite() {
     wci.set_language(1033);
     wci.set_useSamePermissionsAsParentSite(true);
     wci.set_webTemplate('STS#0');
-
+    
     web.get_webs().add(wci); 
     web.update();
 
